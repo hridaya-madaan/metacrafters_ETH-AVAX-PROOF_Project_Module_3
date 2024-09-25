@@ -82,7 +82,7 @@ contract ERC20 is Context, IERC20 {
      * {IERC20-balanceOf} and {IERC20-transfer}.
      */
     function decimals() public view virtual returns (uint8) {
-        return 18;
+        return 0;
     }
 
     /**
@@ -166,7 +166,7 @@ contract ERC20 is Context, IERC20 {
      *
      * - `spender` cannot be the zero address.
      */
-    function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {
+    function increaseAllowance(address spender, uint256 addedValue) internal virtual returns (bool) {
         _approve(_msgSender(), spender, _allowances[_msgSender()][spender] + addedValue);
         return true;
     }
@@ -185,7 +185,7 @@ contract ERC20 is Context, IERC20 {
      * - `spender` must have allowance for the caller of at least
      * `subtractedValue`.
      */
-    function decreaseAllowance(address spender, uint256 subtractedValue) public virtual returns (bool) {
+    function decreaseAllowance(address spender, uint256 subtractedValue) internal virtual returns (bool) {
         uint256 currentAllowance = _allowances[_msgSender()][spender];
         require(currentAllowance >= subtractedValue, "ERC20: decreased allowance below zero");
         _approve(_msgSender(), spender, currentAllowance - subtractedValue);
@@ -251,7 +251,7 @@ contract ERC20 is Context, IERC20 {
      * - `account` cannot be the zero address.
      * - `account` must have at least `amount` tokens.
      */
-    function burn(address account, uint256 amount) public virtual {
+    function _burn(address account, uint256 amount) internal virtual {
         require(account != address(0), "ERC20: burn from the zero address");
 
         _beforeTokenTransfer(account, address(0), amount);
