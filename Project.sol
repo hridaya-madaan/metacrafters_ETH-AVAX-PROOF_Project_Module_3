@@ -25,3 +25,4 @@ contract Mtoken is ERC20 {
         burn(msg.sender, amount);
     }
 }
+// HRIDAYA MADAAN phri2898@gmail.com
