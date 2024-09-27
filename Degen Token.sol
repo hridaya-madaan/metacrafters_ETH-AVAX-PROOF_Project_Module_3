@@ -75,3 +75,4 @@ contract Assessment is ERC20 {
         _burn(msg.sender, value);
     }
 }
+// hridaya madaan phri2898@gmail.com 
