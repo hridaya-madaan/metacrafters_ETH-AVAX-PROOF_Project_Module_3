@@ -44,5 +44,6 @@ You will want to do the following steps to run the project :-
 8. Everything is Done , Our Project is completed.
 
 ## Project By
-- Anshuman Roshan
+- HRIDAYA MADAAN 
+phri2898@gmail.com 
 
